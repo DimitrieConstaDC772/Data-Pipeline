@@ -7,18 +7,29 @@ This repository showcases a complete data workflow that includes **Python ETL sc
 ## 📁 Project Structure
 ```
 project-root/
-├── dags/ # Airflow DAG files
-├── dbt/ # dbt project
+├── dags/
+│ ├── pipelines_dag.py
+├── dbt/
 │ ├── models/
-│ ├── dbt_project.yml
-│ └── ...
-├── scripts/ # Python ETL scripts
-├── plugins/ # Airflow plugins
-├── docker/ # Docker and docker-compose files
-├── requirements/ # Python dependencies
-├── reports/ # Power BI dashboard
+│ │ ├── dims/
+│ │ │ └── dim_company_insights.sql
+│ │ ├── facts/
+│ │ │ ├── fact_sentiment.sql
+│ │ │ └── fact_share_price.sql
+│ │ └── schema.yml
+│ └── dbt_project.yml
+├── docker/
+│ ├── docker-compose.yaml
+│ └── Dockerfile
+├── reports/
 │ ├── dashboard.pbix
 │ └── screenshots/
+├── requirements/
+│ ├── requirements.txt
+│ └── requirements_dbt.txt
+├── scripts/
+│ ├── news_data.py
+│ └── price_data.py
 ├── .env.example # Example environment variables
 └── README.md
 ```
