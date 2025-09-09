@@ -31,6 +31,7 @@ project-root/
 │ ├── news_data.py
 │ └── price_data.py
 ├── .env.example # Example environment variables
+├── LICENCE
 └── README.md
 ```
 ---
