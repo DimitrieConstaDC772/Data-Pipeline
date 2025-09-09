@@ -32,48 +32,59 @@ project-root/
 
 ---
 
-setup_instructions:
-  step_1:
-    title: "Clone the repository"
-    description: "Get a local copy of the project."
-    instructions:
-      - "Clone the repository to your local machine."
-      - "Navigate into the project folder."
-    commands:
-      - "git clone https://github.com/yourusername/your-repo.git"
-      - "cd your-repo"
+# Setup Instructions
 
-  step_2:
-    title: "Create your .env file"
-    description: "Set up environment variables for local development."
-    instructions:
-      - "Copy the example `.env` file to create your own `.env`."
-      - "Edit `.env` to add your local secrets paths and Airflow Fernet key."
-    commands:
-      - "cp .env.example .env"
-      - "nano .env   # or open with your preferred editor to add secrets"
+---
 
-  step_3:
-    title: "Start the environment with Docker"
-    description: "Run the full containerized environment."
-    instructions:
-      - "Start Docker containers using docker-compose."
-      - "Airflow webserver will be available at http://localhost:8080."
-      - "DAGs will automatically load from the `dags/` folder."
-      - "dbt models are mounted into the container and can be run inside Airflow tasks."
-    commands:
-      - "docker-compose up"
+## Clone the repository
 
-  step_4:
-    title: "Power BI Dashboard"
-    description: "Access the reporting dashboard."
-    instructions:
-      - "Open `reports/dashboard.pbix` in Power BI Desktop."
-      - "Use the screenshots in `reports/screenshots/` as a preview of the dashboard pages."
-    commands: []
+**Description:** Get a local copy of the project.
 
-  step_4:
-    description: "Power BI Dashboard"
-    instructions:
-      - "Open reports/dashboard.pbix in Power BI Desktop"
-      - "Use the screenshots in reports/screenshots/ as a preview of the pages"
+**Instructions:**
+- Clone the repository to your local machine.
+- Navigate into the project folder.
+
+**Commands:**
+```bash
+git clone https://github.com/DimitrieConstaDC772/Data-Pipeline.git
+cd your-repo
+
+## Create your `.env` file
+
+**Description:** Set up environment variables for local development.
+
+**Instructions:**
+- Copy the example `.env` file to create your own `.env`.
+- Edit `.env` to add your local secrets paths and Airflow Fernet key.
+
+**Commands:**
+```bash
+cp .env.example .env
+nano .env
+
+## Start the environment with Docker
+
+**Description:** Run the full containerized environment.
+
+**Instructions:**
+- Start Docker containers using docker-compose.
+- Airflow webserver will be available at [http://localhost:8080](http://localhost:8080).
+- DAGs will automatically load from the `dags/` folder.
+- dbt models are mounted into the container and can be run inside Airflow tasks.
+
+**Commands:**
+```bash
+docker-compose up
+
+## Power BI Dashboard
+
+**Description:** Access the reporting dashboard.
+
+**Instructions:**
+- Open `reports/dashboard.pbix` in Power BI Desktop.
+- Use the screenshots in `reports/screenshots/` as a preview of the dashboard pages.
+
+**Commands:**  
+_None_
+
+
