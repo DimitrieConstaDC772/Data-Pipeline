@@ -36,7 +36,7 @@ project-root/
 
 ---
 
-## Clone the repository
+## 1️⃣ Clone the repository
 
 **Description:** Get a local copy of the project.
 
@@ -49,42 +49,49 @@ project-root/
 git clone https://github.com/DimitrieConstaDC772/Data-Pipeline.git
 cd your-repo
 
-## Create your `.env` file
+2️⃣ Create your .env file
 
-**Description:** Set up environment variables for local development.
+Description: Set up environment variables for local development.
 
-**Instructions:**
-- Copy the example `.env` file to create your own `.env`.
-- Edit `.env` to add your local secrets paths and Airflow Fernet key.
+Instructions:
 
-**Commands:**
-```bash
+Copy the example .env file to create your own .env.
+
+Edit .env to add your local secrets paths and Airflow Fernet key.
+
+Commands:
 cp .env.example .env
 nano .env
 
-## Start the environment with Docker
+3️⃣ Start the environment with Docker
 
-**Description:** Run the full containerized environment.
+Description: Run the full containerized environment.
 
-**Instructions:**
-- Start Docker containers using docker-compose.
-- Airflow webserver will be available at [http://localhost:8080](http://localhost:8080).
-- DAGs will automatically load from the `dags/` folder.
-- dbt models are mounted into the container and can be run inside Airflow tasks.
+Instructions:
 
-**Commands:**
-```bash
+Start Docker containers using docker-compose.
+
+Airflow webserver will be available at http://localhost:8080
+.
+
+DAGs will automatically load from the dags/ folder.
+
+dbt models are mounted into the container and can be run inside Airflow tasks.
+
+Commands:
 docker-compose up
 
-## Power BI Dashboard
+4️⃣ Power BI Dashboard
 
-**Description:** Access the reporting dashboard.
+Description: Access the reporting dashboard.
 
-**Instructions:**
-- Open `reports/dashboard.pbix` in Power BI Desktop.
-- Use the screenshots in `reports/screenshots/` as a preview of the dashboard pages.
+Instructions:
 
-**Commands:**  
-_None_
+Open reports/dashboard.pbix in Power BI Desktop.
+
+Use the screenshots in reports/screenshots/ as a preview of the dashboard pages.
+
+Commands:
+None
 
 
