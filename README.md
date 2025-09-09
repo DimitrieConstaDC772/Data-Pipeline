@@ -1,57 +1,65 @@
-# Data-Pipeline
-Sentiment Analysis Data Pipeline
+# End-to-End Data Pipeline and Dashboard Project
 
-## 1. Data Collection: Financial News
-Tool: Python (requests, BeautifulSoup, or NewsAPI)
+This repository showcases a complete data workflow that includes **Python ETL scripts**, **Airflow orchestration**, **dbt transformations**, **Docker containerization**, and a **Power BI dashboard** for visualization.
 
-Goal: Collect news headlines and article snippets related to selected stock tickers (e.g., AAPL, TSLA, AMZN).
-## 2. Sentiment Analysis
-Tool: FinBERT (for finance-specific sentiment) or VADER (for simplicity)
+---
 
-Goal: Assign a numeric sentiment score to each article headline.
-## 3. SQL Database (Staging + Production Tables)
-Tool: PostgreSQL or BigQuery
+## 📁 Project Structure
+project-root/
+├── dags/ # Airflow DAG files
+├── dbt/ # dbt project
+│ ├── models/
+│ ├── dbt_project.yml
+│ └── ...
+├── scripts/ # Python ETL scripts
+├── plugins/ # Airflow plugins
+├── docker/ # Docker and docker-compose files
+├── requirements/ # Python dependencies
+├── reports/ # Power BI dashboard
+│ ├── dashboard.pbix
+│ └── screenshots/
+├── .env.example # Example environment variables
+└── README.md
+---
 
-Goal: Store raw + cleaned data using SQL for further querying and aggregation.
+## Technologies Used
 
-SQL Tables:
-news_raw → stores raw scraped articles
+- **Python** – ETL scripts and data processing
+- **Airflow** – DAG orchestration for automated pipelines
+- **dbt** – Data transformations and modeling
+- **Docker & docker-compose** – Containerized development environment
+- **Power BI** – Interactive dashboards for reporting
 
-sentiment_scores → stores processed scores
+---
 
-daily_summary → aggregated sentiment per ticker per day
+## Setup Instructions
 
-## 4. Data Modeling with DBT (Optional but Impressive)
-Tool: DBT
+1. **Clone the repository**
 
-Goal: Model SQL transformations like:
+```bash
+git clone https://github.com/DimitrieConstaDC772/Data-Pipeline.git
+cd your-repo
 
-Daily average sentiment
 
-Tickers with largest sentiment swings
+2. Create your .env file
+Copy .env.example and fill in your local paths and Airflow Fernet key:
 
-Sector-level rollups
+cp .env.example .env
+# Then edit .env to add your local secrets paths and Fernet key
 
-## 5. Automation (Airflow or DBT Scheduler)
-Tool: Apache Airflow (or DBT Cloud Scheduler)
+3. Start the environment with Docker
 
-Goal: Automate daily pipeline:
+docker-compose up
 
-Run Python scripts → sentiment scoring
 
-Load into SQL → run DBT models
+Airflow webserver will be available at http://localhost:8080.
 
-Refresh Power BI dashboard
+DAGs will automatically load from dags/.
 
-## 6. Data Visualization
-Tool: Power BI
+dbt models are mounted into the container and can be run inside Airflow tasks.
 
-Goal: Build an interactive dashboard with:
+4. Power BI Dashboard
 
-📈 Sentiment trend per stock
+Open reports/dashboard.pbix in Power BI Desktop.
 
-🔔 “High volatility” or “Negative press” alerts
-
-📊 Sector comparison (average sentiment by sector)
-
-🧠 “Analyst Notes” section (human interpretation box)
+Use the screenshots in reports/screenshots/ as a preview of the pages
