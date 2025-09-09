@@ -34,27 +34,43 @@ project-root/
 
 setup_instructions:
   step_1:
-    description: "Clone the repository"
+    title: "Clone the repository"
+    description: "Get a local copy of the project."
+    instructions:
+      - "Clone the repository to your local machine."
+      - "Navigate into the project folder."
     commands:
       - "git clone https://github.com/yourusername/your-repo.git"
       - "cd your-repo"
 
   step_2:
-    description: "Create your .env file"
+    title: "Create your .env file"
+    description: "Set up environment variables for local development."
     instructions:
-      - "Copy .env.example to .env"
-      - "Edit .env to add your local secrets paths and Airflow Fernet key"
+      - "Copy the example `.env` file to create your own `.env`."
+      - "Edit `.env` to add your local secrets paths and Airflow Fernet key."
     commands:
       - "cp .env.example .env"
+      - "nano .env   # or open with your preferred editor to add secrets"
 
   step_3:
-    description: "Start the environment with Docker"
+    title: "Start the environment with Docker"
+    description: "Run the full containerized environment."
+    instructions:
+      - "Start Docker containers using docker-compose."
+      - "Airflow webserver will be available at http://localhost:8080."
+      - "DAGs will automatically load from the `dags/` folder."
+      - "dbt models are mounted into the container and can be run inside Airflow tasks."
     commands:
       - "docker-compose up"
-    notes:
-      - "Airflow webserver will be available at http://localhost:8080"
-      - "DAGs will automatically load from dags/"
-      - "dbt models are mounted into the container and can be run inside Airflow tasks"
+
+  step_4:
+    title: "Power BI Dashboard"
+    description: "Access the reporting dashboard."
+    instructions:
+      - "Open `reports/dashboard.pbix` in Power BI Desktop."
+      - "Use the screenshots in `reports/screenshots/` as a preview of the dashboard pages."
+    commands: []
 
   step_4:
     description: "Power BI Dashboard"
