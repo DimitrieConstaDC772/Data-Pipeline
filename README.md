@@ -5,7 +5,7 @@ This repository showcases a complete data workflow that includes **Python ETL sc
 ---
 
 ## 📁 Project Structure
----
+-
 project-root/
 ├── dags/ # Airflow DAG files
 ├── dbt/ # dbt project
