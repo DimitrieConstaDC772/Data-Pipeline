@@ -1,0 +1,12 @@
+name: airflow_dbt_project
+version: '1.0'
+config-version: 2
+
+profile: bq-client-462019  # must match the name in your profiles.yml
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+model-paths: ["models"]

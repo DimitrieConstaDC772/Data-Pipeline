@@ -1,0 +1,4 @@
+transformers 
+torch 
+google-cloud-bigquery 
+python-dotenv

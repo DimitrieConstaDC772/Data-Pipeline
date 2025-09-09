@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: fact_share_price
+    description: "Share price time series for each company"
+    columns:
+      - name: Company
+        description: "Name of the company"
+        tests:
+          - not_null
+      - name: Time
+        description: "Date and time of the share price"
+        tests:
+          - not_null
+      - name: Price
+        description: "Current price of the company at the given time"
+        tests:
+          - not_null
+
+  - name: dim_company_insights
+    description: "Latest news and sentiment labels with probabilities"
+    columns:
+      - name: Company
+        description: "Name of the company"
+        tests:
+          - not_null
+      - name: Title
+        description: "Title of the article"
+        tests:
+          - not_null
+      - name: Time
+        description: "Date and time of the article"
+        tests:
+          - not_null
+      - name: Label
+        description: "Sentiment label based on the article's content"
+        tests:
+          - not_null
+      - name: Probability
+        description: "Probability of the sentiment label"
+        tests:
+          - not_null
+      - name: Source
+        description: "Soruce of the article"
+        tests:
+          - not_null
+      - name: URL
+        description: "URL link to the article"
+        tests:
+          - not_null
+
+  - name: fact_sentiment
+    description: "Sentiment label time series for each company"
+    columns:
+      - name: Company
+        description: "Name of the company"
+        tests:
+          - not_null
+      - name: Label
+        description: "Sentiment label based on the article's content"
+        tests:
+          - not_null
+      - name: Probability
+        description: "Probability of the sentiment label"
+        tests:
+          - not_null
+      - name: Time
+        description: "Date and time of the sentiment analysis"
+        tests:
+          - not_null
