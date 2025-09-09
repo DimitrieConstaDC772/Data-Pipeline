@@ -5,7 +5,6 @@ This repository showcases a complete data workflow that includes **Python ETL sc
 ---
 
 ## 📁 Project Structure
--
 project-root/
 ├── dags/ # Airflow DAG files
 ├── dbt/ # dbt project
@@ -33,34 +32,32 @@ project-root/
 
 ---
 
-## Setup Instructions
+setup_instructions:
+  step_1:
+    description: "Clone the repository"
+    commands:
+      - "git clone https://github.com/yourusername/your-repo.git"
+      - "cd your-repo"
 
-1. **Clone the repository**
+  step_2:
+    description: "Create your .env file"
+    instructions:
+      - "Copy .env.example to .env"
+      - "Edit .env to add your local secrets paths and Airflow Fernet key"
+    commands:
+      - "cp .env.example .env"
 
-```bash
-git clone https://github.com/DimitrieConstaDC772/Data-Pipeline.git
-cd your-repo
+  step_3:
+    description: "Start the environment with Docker"
+    commands:
+      - "docker-compose up"
+    notes:
+      - "Airflow webserver will be available at http://localhost:8080"
+      - "DAGs will automatically load from dags/"
+      - "dbt models are mounted into the container and can be run inside Airflow tasks"
 
-
-2. Create your .env file
-Copy .env.example and fill in your local paths and Airflow Fernet key:
-
-cp .env.example .env
-# Then edit .env to add your local secrets paths and Fernet key
-
-3. Start the environment with Docker
-
-docker-compose up
-
-
-Airflow webserver will be available at http://localhost:8080.
-
-DAGs will automatically load from dags/.
-
-dbt models are mounted into the container and can be run inside Airflow tasks.
-
-4. Power BI Dashboard
-
-Open reports/dashboard.pbix in Power BI Desktop.
-
-Use the screenshots in reports/screenshots/ as a preview of the pages
+  step_4:
+    description: "Power BI Dashboard"
+    instructions:
+      - "Open reports/dashboard.pbix in Power BI Desktop"
+      - "Use the screenshots in reports/screenshots/ as a preview of the pages"
