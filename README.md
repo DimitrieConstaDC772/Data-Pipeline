@@ -21,6 +21,7 @@ project-root/
 │ └── screenshots/
 ├── .env.example # Example environment variables
 └── README.md
+```
 ---
 
 ## Technologies Used
